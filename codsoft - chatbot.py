@@ -2,12 +2,10 @@ import random
 
 class SimpleChatbot:
     def __init__(self):
-        # Define common greetings and farewells
         self.greetings = ["Hi there!", "Hello!", "Hey!"]
         self.farewells = ["Goodbye! Have a great day!", "See you later!", "Take care!"]
 
     def get_response(self, user_input):
-        # Convert user input to lowercase for easier comparison
         user_input = user_input.lower()
 
         # Define rules and corresponding response functions
@@ -26,15 +24,12 @@ class SimpleChatbot:
         return self.generate_default_response()
 
     def respond_to_greeting(self):
-        # Select a random greeting from the list
         return random.choice(self.greetings)
 
     def respond_to_inquiry(self):
-        # Respond to inquiry about the bot's status
         return "I'm just a computer program, but I'm functioning well. Thanks for asking!"
 
     def respond_to_farewell(self):
-        # Select a random farewell from the list
         return random.choice(self.farewells)
 
     def generate_default_response(self):
@@ -52,7 +47,6 @@ def main():
     # Main loop for interacting with the chatbot
     while True:
         try:
-            # Get user input
             user_input = input("You: ")
 
             # Check if user wants to exit
@@ -63,7 +57,6 @@ def main():
                 # Provide response based on user input
                 print("Bot:", chatbot.get_response(user_input))
         except KeyboardInterrupt:
-            # Handle keyboard interruption gracefully
             print("\nGoodbye! Exiting...")
             break
         except Exception as e:
@@ -71,5 +64,4 @@ def main():
             print("Oops! Something went wrong:", e)
 
 if __name__ == "__main__":
-    # Start the chatbot
     main()
